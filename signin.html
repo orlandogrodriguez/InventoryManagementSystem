@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script>
@@ -39,31 +39,41 @@
         <br>
         <h2 class="display-3 text-center">Inventory Management System</h2>
         <br>
+        <hr>
     </div>
-    <div class="mynavigation">
-        <ul class="nav justify-content-center nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Add Items</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Inventory</a>
-            </li>
-        </ul>
-    </div>
-    <div>
+</div>
+<div class="container">
+    <div class="align-items-center">
         <br>
-        <form class="form-row">
-            <div class="col">
-                <input type="text" class="form-control" id="item-name" placeholder="Item Name">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" id="item-number" placeholder="ID Number">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" id="item-quantity" placeholder="Quantity">
-            </div>
-            <button type="submit" class="btn btn-primary col-2">Add To Inventory</button>
-        </form>
+        <div class="row justify-content-center">
+            <h2>Log In</h2>
+        </div>
+        <div class="row justify-content-center">
+            <form class="col-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Remember Me
+                    </label>
+                </div>
+                <br>
+                <div class="form-row justify-content-center">
+                    <button type="submit" class="btn btn-primary col-6">Log In</button>
+                </div>
+                <br>
+                <div class="form-row justify-content-center">
+                    <button type="submit" class="btn btn-link col-3">Sign Up</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
