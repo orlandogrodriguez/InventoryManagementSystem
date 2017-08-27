@@ -12,21 +12,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// firebase.auth().onAuthStateChanged(function(user) {
-//     console.log("onAuthStateChanged");
-//     console.log(user);
-//     if (user) {
-//         console.log('user is valid');
-//         user.updateProfile({
-//             displayName: firstName + " " + lastName
-//         }).then(function() {
-//             location.replace("dashboard.html");
-//         });
-//     } else {
-//         console.log('no user signed in')
-//     }
-// });
-
 var firstName = "unassigned name";
 var lastName  = "unassigned last";
 var email     = "unassigned email";
@@ -56,10 +41,11 @@ function handleSignUp() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
         var user = firebase.auth().currentUser;
+        user.sendEmailVerification();
         user.updateProfile({
             displayName: firstName + " " + lastName
         }).then(function() {
-            location.replace("dashboard.html");
+            location.replace("unverified.html");
         });
     }).catch(function(error) {
         var errorCode = error.code;

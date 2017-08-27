@@ -12,7 +12,11 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
     if (user) {
-        document.getElementById('user-display-name').innerHTML = user.displayName;
+        if (user.emailVerified) {
+            document.getElementById('user-display-name').innerHTML = user.displayName;
+        } else {
+            location.replace('unverified.html');
+        }
     } else {
         console.log('no user signed in');
         location.replace('index.html');
