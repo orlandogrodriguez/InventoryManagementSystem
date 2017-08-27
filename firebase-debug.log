@@ -1,0 +1,36 @@
+[debug] [2017-08-26T22:53:32.376Z] ----------------------------------------------------------------------
+[debug] [2017-08-26T22:53:32.378Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-08-26T22:53:32.379Z] CLI Version:   3.9.2
+[debug] [2017-08-26T22:53:32.379Z] Platform:      darwin
+[debug] [2017-08-26T22:53:32.379Z] Node Version:  v7.7.2
+[debug] [2017-08-26T22:53:32.379Z] Time:          Sat Aug 26 2017 18:53:32 GMT-0400 (EDT)
+[debug] [2017-08-26T22:53:32.379Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-26T22:53:32.389Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-26T22:53:32.389Z] > authorizing via signed-in user
+[debug] [2017-08-26T22:53:32.390Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-26T22:53:32.391Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/78gkj1WEIk4m4G3YWE3pQU8ec3N5kY5Bc7LhyO5Plxs',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Aug 26 2017 18:53:32 GMT-0400 (EDT)
+[debug] [2017-08-26T22:53:32.975Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-26T22:53:32.990Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/inventorymanagementsyste-4ff37  
+ Sat Aug 26 2017 18:53:32 GMT-0400 (EDT)
+[debug] [2017-08-26T22:53:34.221Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-26T22:53:34.222Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/inventorymanagementsyste-4ff37/tokens  
+ Sat Aug 26 2017 18:53:34 GMT-0400 (EDT)
+[debug] [2017-08-26T22:53:35.139Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/orlandogrodriguez/Documents/Software Development/Angular/InventoryManagementSystem'...
+[info] 
+[debug] [2017-08-26T22:53:35.142Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/inventorymanagementsyste-4ff37  
+ Sat Aug 26 2017 18:53:35 GMT-0400 (EDT)
+[debug] [2017-08-26T22:53:35.949Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-26T22:53:35.950Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/719121174258/clients/_:getWebAppConfig  
+ Sat Aug 26 2017 18:53:35 GMT-0400 (EDT)
+[debug] [2017-08-26T22:53:36.692Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: app
+[info] ✔  hosting: Local server: http://localhost:5000
+
