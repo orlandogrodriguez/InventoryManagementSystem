@@ -36,7 +36,7 @@
         });
 
         promise.then(function() {
-            console.log('Logging in... redirecting to dashboard.')
+            console.log('Logging in... redirecting to dashboard.');
             location.replace('dashboard.html');
         });
 

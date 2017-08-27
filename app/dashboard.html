@@ -13,7 +13,17 @@
 <div class="container">
     <div class="mytitle">
         <br>
-        <h2 class="display-3 text-center">Inventory Management System</h2>
+        <div class="row align-items-center">
+            <div class="col-2">
+                <button class="btn btn-outline-primary" id="logout-btn">Log Out</button>
+            </div>
+            <div class="col-8">
+                <h2 class="display-3 text-center">Dashboard</h2>
+            </div>
+            <div class="col-2">
+                <h4 id="user-display-name" class="text-right">Guest</h4>
+            </div>
+        </div>
         <br>
     </div>
     <div class="mynavigation">
@@ -44,6 +54,13 @@
 </div>
 
 <!-- Optional JavaScript -->
+<script src="/__/firebase/4.0.0/firebase-app.js"></script>
+<script src="/__/firebase/4.0.0/firebase-auth.js"></script>
+<script src="/__/firebase/init.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+<script src="dashboard.js"></script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

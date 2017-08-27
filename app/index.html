@@ -7,33 +7,39 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 </head>
 <body onLoad="triggerJS();">
-<h1>Loading...</h1>
-
+<h1 id="loading-message">Loading...</h1>
 <script>
     function triggerJS(){
-        console.log('redirecting to signup page.');
-        location.replace("signup.html");
-        /*
-         location.assign("New_WebSite_Url");
-         //Use assign() instead of replace if you want to have the first page in the history (i.e if you want the user to be able to navigate back when New_WebSite_Url is loaded)
-         */
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCaXAHOIuy7orbovHaNLTcpBHU7SfhPgyQ",
+            authDomain: "inventorymanagementsyste-4ff37.firebaseapp.com",
+            databaseURL: "https://inventorymanagementsyste-4ff37.firebaseio.com",
+            projectId: "inventorymanagementsyste-4ff37",
+            storageBucket: "inventorymanagementsyste-4ff37.appspot.com",
+            messagingSenderId: "719121174258"
+        };
+        firebase.initializeApp(config);
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log(user.displayName + " is currently logged in.");
+                document.getElementById('loading-message').innerHTML = "Logging you in...";
+                setTimeout(function() {
+                    location.replace('dashboard.html');
+                }, 1000)
+            } else {
+                location.replace('signup.html');
+            }
+        });
     }
 </script>
 
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyCaXAHOIuy7orbovHaNLTcpBHU7SfhPgyQ",
-        authDomain: "inventorymanagementsyste-4ff37.firebaseapp.com",
-        databaseURL: "https://inventorymanagementsyste-4ff37.firebaseio.com",
-        projectId: "inventorymanagementsyste-4ff37",
-        storageBucket: "inventorymanagementsyste-4ff37.appspot.com",
-        messagingSenderId: "719121174258"
-    };
-    firebase.initializeApp(config);
-</script>
+
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -1,12 +1,42 @@
 /**
  * Created by orlandogrodriguez on 8/26/17.
  */
+
+var config = {
+    apiKey: "AIzaSyCaXAHOIuy7orbovHaNLTcpBHU7SfhPgyQ",
+    authDomain: "inventorymanagementsyste-4ff37.firebaseapp.com",
+    databaseURL: "https://inventorymanagementsyste-4ff37.firebaseio.com",
+    projectId: "inventorymanagementsyste-4ff37",
+    storageBucket: "inventorymanagementsyste-4ff37.appspot.com",
+    messagingSenderId: "719121174258"
+};
+firebase.initializeApp(config);
+
+// firebase.auth().onAuthStateChanged(function(user) {
+//     console.log("onAuthStateChanged");
+//     console.log(user);
+//     if (user) {
+//         console.log('user is valid');
+//         user.updateProfile({
+//             displayName: firstName + " " + lastName
+//         }).then(function() {
+//             location.replace("dashboard.html");
+//         });
+//     } else {
+//         console.log('no user signed in')
+//     }
+// });
+
+var firstName = "unassigned name";
+var lastName  = "unassigned last";
+var email     = "unassigned email";
+
 function handleSignUp() {
     console.log("attempting sign up...");
-    var email = document.getElementById('email').value;
+    email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
-    var firstName = document.getElementById('first-name').value;
-    var lastName = document.getElementById('last-name').value;
+    firstName = document.getElementById('first-name').value;
+    lastName = document.getElementById('last-name').value;
     if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -24,23 +54,23 @@ function handleSignUp() {
         return;
     }
 
-    // Sign in with email and pass.
-    // [START createwithemail]
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
+        var user = firebase.auth().currentUser;
+        user.updateProfile({
+            displayName: firstName + " " + lastName
+        }).then(function() {
+            location.replace("dashboard.html");
+        });
+    }).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        // [START_EXCLUDE]
         if (errorCode == 'auth/weak-password') {
             alert('The password is too weak.');
         } else {
             alert(errorMessage);
         }
         console.log(error);
-        // [END_EXCLUDE]
     });
-    // [END createwithemail]
-    alert("successfully created user");
 }
 
 function gotoSignIn() {
