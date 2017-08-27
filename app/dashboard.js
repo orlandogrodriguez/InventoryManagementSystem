@@ -8,6 +8,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+const dbref = firebase.database();
 
 firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
@@ -32,4 +33,9 @@ function handleLogOut() {
     });
 }
 
+function handleAddItem() {
+    dbref.child('items').child()
+}
+
 document.getElementById('logout-btn').addEventListener('click', handleLogOut, false);
+document.getElementById('agregar-btn').addEventListener('click', handleAddItem, false);
