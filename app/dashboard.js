@@ -1,3 +1,5 @@
+//Firebase
+
 var config = {
     apiKey: "AIzaSyCaXAHOIuy7orbovHaNLTcpBHU7SfhPgyQ",
     authDomain: "inventorymanagementsyste-4ff37.firebaseapp.com",
@@ -8,7 +10,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-const dbref = firebase.database();
+const dbref = firebase.database().ref();
 
 firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
@@ -24,6 +26,13 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
+// Item Parameters
+var guarderia = "";
+var articulo  = "";
+var unidad    = "";
+var cantidad  = 0;
+
+// Functions
 function handleLogOut() {
     firebase.auth().signOut().then(function() {
         console.log('log out successfull...');
@@ -34,8 +43,28 @@ function handleLogOut() {
 }
 
 function handleAddItem() {
-    dbref.child('items').child()
+
+    guarderia = document.getElementById('input-guarderia').value;
+    articulo  = document.getElementById('input-articulo').value;
+    unidad    = document.getElementById('input-unidad').value;
+    cantidad  = document.getElementById('input-cantidad').value;
+
+    checkForValidInputs();
+
+    dbref.child('items').push().set({
+        'Guarderia':guarderia,
+        'Articulo':articulo,
+        'Unidad':unidad,
+        'Cantidad':cantidad
+    });
+    console.log('successfully added new item...');
 }
 
+function checkForValidInputs() {
+    console.log('checking for valid inputs...');
+    //TODO: Write rules for checking valid inputs.
+}
+
+// Listeners
 document.getElementById('logout-btn').addEventListener('click', handleLogOut, false);
 document.getElementById('agregar-btn').addEventListener('click', handleAddItem, false);

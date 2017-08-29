@@ -21,7 +21,7 @@
                 <h2 class="display-3 text-center">Dashboard</h2>
             </div>
             <div class="col-2">
-                <h4 id="user-display-name" class="text-right">Guest</h4>
+                <h4 id="user-display-name" class="text-right"></h4>
             </div>
         </div>
         <br>
@@ -29,30 +29,38 @@
     <div class="mynavigation">
         <ul class="nav justify-content-center nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Add Items</a>
+                <a class="nav-link" href="dashboard.html">Add Items</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="inventory.html">Inventario</a>
+                <a class="nav-link active" href="#">Inventario</a>
             </li>
         </ul>
     </div>
-    <div>
+    <div id="searchbar">
         <br>
-        <form class="form-row">
-            <div class="col">
-                <input type="text" class="form-control" id="input-guarderia" placeholder="Guardería">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" id="input-articulo" placeholder="Artículo">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" id="input-unidad" placeholder="Unidad">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" id="input-cantidad" placeholder="Cantidad">
-            </div>
-            <button id='agregar-btn' type="submit" class="btn btn-primary col-1">Agregar</button>
-        </form>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+            </span>
+
+        </div>
+    </div>
+    <br>
+    <div id="inventory-full">
+        <table class="table">
+            <thead id="table-head">
+                <tr>
+                    <th>Guarderia</th>
+                    <th>Articulo</th>
+                    <th>Unidad</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -63,7 +71,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 
-<script src="dashboard.js"></script>
+<script src="inventory.js"></script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
